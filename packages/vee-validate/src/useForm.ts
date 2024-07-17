@@ -1009,6 +1009,8 @@ export function useForm<
       return;
     }
 
+    if (opts?.validateOnMount === false) return;
+
     // otherwise run initial silent validation through schema if available
     // the useField should skip their own silent validation if a yup schema is present
     if (formCtx.validateSchema) {
